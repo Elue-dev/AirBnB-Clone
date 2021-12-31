@@ -116,7 +116,7 @@ a{
 
     .cities-wrapper{
         display: flex;
-        gap: .5rem;
+        gap: 0rem;
         overflow-x: auto;
         flex-wrap: nowrap;
     }

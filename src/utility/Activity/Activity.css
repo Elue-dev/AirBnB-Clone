@@ -91,7 +91,7 @@ a{
 
     .activities-wrapper{
         display: flex;
-        gap: .5rem;
+        gap: 0rem;
         overflow-x: auto;
         flex-wrap: nowrap;
     }
