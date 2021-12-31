@@ -103,6 +103,12 @@ a{
     .activity{
         min-width: 85%;
     }
+
+     .wrapper{
+        max-width: 1300px;
+        margin: auto;
+        width: 85%;
+    }
 }
 
 @media (max-width: 360px){
