@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import openModal from '../../actions/openModal'
 import Login from './Login'
 import { baseUrl } from '../../api'
 import axios from 'axios'
 import swal from 'sweetalert'
+import regAction from '../../actions/regAction'
 import './Login.css'
 
 export default function SignUp() {
 
     const dispatch = useDispatch()
+    const auth = useSelector(state => state.auth)
     const [changeEmail, setChangeEmail] = useState('')
     const [changePassword, setChangePassword] = useState('')
 
@@ -79,9 +81,12 @@ export default function SignUp() {
                 title: "success",
                 icon: "success",
               })
+            //   here is where we call our register action to update our auth reducer
+            dispatch(regAction(resp.data)) //sending out everything we got from the server, not just the token
         }
     }
 
+    console.log(auth)
 
     return (
         <div className="login-form">
