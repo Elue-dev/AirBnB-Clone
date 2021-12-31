@@ -7,6 +7,7 @@
     box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
     margin-left: 80px;
     margin-top: 8rem;
+    z-index: 1;
 }
 
 .home-search-box h1{

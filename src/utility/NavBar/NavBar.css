@@ -43,6 +43,9 @@ nav ul li a:hover{
 
 .left{
     margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fa-airbnb{
@@ -86,11 +89,12 @@ nav ul li a:hover{
     width: 40%;
     height: 100vh;
     border-left: 1px solid #ff5252;
+    overflow: hidden;
 }
 
 .overlay{
     position: fixed;
-    z-index: 0; 
+    z-index: -1; 
     left: 0;
     top: 0;
     width: 100%;
@@ -131,11 +135,13 @@ nav ul li a:hover{
     .hamburger{
         display: block;
         z-index: 0;
+        color: #ff5252;
     }
 
     .fa-times{
         display: block;
         z-index: 1000;
+        color: #ff5252;
     }
 }
 
@@ -144,11 +150,16 @@ nav ul li a:hover{
     .fa-times{
         top: 16px;
     }
+
+    .left{
+        margin-top: .5rem;
+    }
 }
 
 @media (max-width: 500px){
     .media{
         width: 50%;
+        z-index: 10000000000;
     }
 
     nav.right{

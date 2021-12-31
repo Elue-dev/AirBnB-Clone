@@ -34,8 +34,8 @@ function NavBar() {
             <div className='container-fluid nav'>
                 <nav className={navColor}>
                     <div className='nav-wrapper margin'>
-                        <Link to='/' className='left'><i className="fab fa-airbnb"></i><span>airbnb</span></Link>
-                        <div className={showMenu ? 'overlay show' : 'overlay'}>
+                        <Link to='/' className='left'><i className="fab fa-airbnb"></i><span>AirBnB</span></Link>
+                        <div className={showMenu ? 'overlay show' : 'overlay'}></div>
                         <ul id="nav-mobile" className={showMenu ? 'right media' : 'right'}>
                             <li onClick={removeMedia}><Link to="/">English (US)</Link></li>
                             <li onClick={removeMedia}><Link to="/">$ USD</Link></li>
@@ -45,7 +45,6 @@ function NavBar() {
                             <li onClick={modalHandler, media} className='login-signup'>Log In</li>
                             <i onClick={()=>setShowMenu(false)} className="fas fa-times"></i>
                         </ul>
-                        </div>
                         <i onClick={()=>setShowMenu(!showMenu)} className='hamburger fas fa-bars'></i>
                     </div>  
                 </nav>
