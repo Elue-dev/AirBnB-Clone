@@ -1,0 +1,186 @@
+.location-details{
+    text-align: left;
+}
+
+.single-venue .location{
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.125em;
+    color: #484848;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.single-venue .location-details{
+    margin-top: 30px;
+}
+
+.single-venue .right-details{
+    border: 1px solid #e4e4e4;
+    padding: 15px;
+}
+
+.right-details .price-per-day{
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.44444em;
+    color: rgb(72, 72, 72);
+    margin: 0px;   
+}
+
+
+.location-details .left-details .title{
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.375em;
+    color: #484848;
+    margin-bottom: 20px;
+}
+
+.single-venue .divider{
+    margin: 10px 0;
+}
+
+.location-details .left-details .guests{
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.375em;
+    color: #484848;
+}
+
+.right-details .price-per-day span{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.33333em;
+    color: rgb(72, 72, 72);
+    margin: 0px;
+}
+
+.right-details button{
+    width: 100%;
+}
+
+.point-title{
+    font-weight: bold;
+}
+
+.point-desc{
+    margin-bottom: 20px;
+}
+
+.sv-wrapper{
+    padding-top: 6rem;
+    max-width: 1300px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.sv-wrapper h3{
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ff5252;
+}
+
+.sv-wrapper img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper{
+    max-width: 1300px;
+    margin: auto;
+    width: 80%;
+}
+
+.venue-grid{
+    display: grid;
+    grid-template-columns: 520px 400px;
+}
+
+.venue-details{
+    line-height: 2;
+}
+
+.venue-guests{
+    padding-bottom: 1rem;
+}
+
+.venue-title{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.points-wrapper{
+    margin-top: 1rem;
+}
+
+.points{
+    margin-bottom: 1rem;
+}
+
+.right-wrapper{
+    padding-top: 2.3rem;
+    padding-left: .1rem;
+}
+
+.right-details{
+    border: 1px solid #e0e0e0;
+    height: auto;
+    padding: 1.6rem;
+    max-width: 400px;
+    line-height: 2.5;
+    background: #fffafa;
+}
+
+.rating{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: .2rem;
+}
+
+.rating i{
+    font-size: 1.5rem;
+}
+
+.venues-form{
+    max-width: 100%;
+    line-height: 3;
+    padding-top: .5rem;
+}
+
+.select{
+    padding: .5rem 0;
+}
+
+@media (max-width: 500px){
+    .sv-wrapper{
+        padding-top: 8rem;
+        width: 85%;
+        display: block;
+    }
+
+    .sv-wrapper img{
+        max-width: 340px;
+        min-height: 300px;
+    }
+
+    .venue-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .divider{
+        width: 98%;
+    }
+}

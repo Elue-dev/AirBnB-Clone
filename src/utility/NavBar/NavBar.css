@@ -1,0 +1,61 @@
+.nav{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* padding: 0 2rem; */
+}
+
+.nav nav{
+    box-shadow: none;
+}
+
+.nav ul{
+    margin-right: 2rem;
+}
+
+.nav ul li{
+    color: white;
+    cursor: pointer;
+}
+
+.nav ul li.login-signup{
+    margin-right: 15px;
+}
+
+.nav .nav-non-link{
+    padding: 0 15px;
+}
+
+.nav-non-link:hover{
+    border-bottom: 2px solid white;
+    background-color: initial;
+}
+
+.nav ul li:hover{
+    border-bottom: 2px solid white;
+    background-color: initial;    
+}
+
+.left{
+    margin-left: 2rem;
+}
+
+.fa-airbnb{
+    font-size: 3rem;
+    color: #ff5252;
+}
+
+.left span{
+    color: #ff5252;
+    margin-left: .3rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 500px){
+    nav.right{
+        position: absolute;
+        top: 10px;
+        padding: 2rem;
+    }
+}

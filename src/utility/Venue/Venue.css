@@ -1,0 +1,97 @@
+a{
+    color: #000;
+}
+
+.venues img {
+    border-style: none;
+    width: 380px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: .5rem;
+    position: relative;
+    z-index: -1;
+    max-width: 100%;
+}
+
+.wrapper{
+    max-width: 1300px;
+    margin: auto;
+    width: 85%;
+}
+
+.v-header{
+    margin-bottom: 1rem;
+}
+
+.main-container{
+    padding-top: 3rem;
+}
+
+.venue-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.venues-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0.8rem;
+    row-gap: 2rem;
+    max-width: 1300px;
+    margin: auto;
+    width: 87%;
+}
+
+.rating{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.rating i{
+    font-size: 1.5rem;
+}
+
+@media (max-width: 800px){
+    .venues-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    img{
+        width: 340px;
+    }
+}
+
+@media (max-width: 500px){
+    .venues-wrapper{
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+        width: 90%;
+    }
+
+    h3{
+        font-size: 1.7rem;
+    }
+
+    img{
+        max-width: 85%;
+        max-height: 200px;
+    }
+
+    .venue img{
+        width: 370px;
+    }
+
+    .venue{
+        width: 98%;
+    }
+}
+
+@media (max-width: 360px){
+    .venue{
+        width: 99%;
+    }
+}
