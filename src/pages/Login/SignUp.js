@@ -68,7 +68,7 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput}) => {
                 </div>
             </div>
             <div className='col m12'>
-                <button type='submit' className='btn red accent-2' style={{width: '100%'}}>Submit</button>
+                <button type='submit' className='btn red accent-2' style={{width: '100%', fontWeight: '700'}}>Submit</button>
             </div>
         </div>
     )

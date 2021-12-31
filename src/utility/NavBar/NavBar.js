@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import openModal from '../../actions/openModal'
 import '../NavBar/NavBar.css'
 import SignUp from '../../pages/Login/SignUp';
+import Login from '../../pages/Login/Login';
 
 function NavBar() {
     const location = useLocation();
@@ -20,13 +21,20 @@ function NavBar() {
             setShowMenu(false)
         }
 
-        const modalHandler = () => {
+        const SignModalHandler = () => {
             dispatch(openModal('open', <SignUp />))
         }
+        const LogModalHandler = () => {
+            dispatch(openModal('open', <Login />))
+        }
 
-        const media = () => {
+        const SignMedia = () => {
             setShowMenu(false)
             dispatch(openModal('open', <SignUp />))
+        }
+        const LogMedia = () => {
+            setShowMenu(false)
+            dispatch(openModal('open', <Login />))
         }
 
         return (
@@ -40,8 +48,8 @@ function NavBar() {
                             <li onClick={removeMedia}><Link to="/">$ USD</Link></li>
                             <li onClick={removeMedia}><Link to="/">Become a host</Link></li>
                             <li onClick={removeMedia}><Link to="/">Help</Link></li>
-                            <li onClick={modalHandler, media} className='login-signup'>Sign Up</li>
-                            <li onClick={modalHandler, media} className='login-signup'>Log In</li>
+                            <li onClick={SignModalHandler, SignMedia} className='login-signup'>Sign Up</li>
+                            <li onClick={LogModalHandler, LogMedia} className='login-signup'>Log In</li>
                             <i onClick={removeMedia} className="fas fa-times"></i>
                         </ul>
                         <i onClick={()=>setShowMenu(!showMenu)} className='hamburger fas fa-bars'></i>
