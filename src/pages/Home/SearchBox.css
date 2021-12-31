@@ -68,13 +68,17 @@
     }
 }
 
-@media (max-width: 330px){
+@media (max-width: 350px){
     .home-search-box.col.m4 {
         top: 35%;
         left: 25%;
         padding-bottom: 24px !important;
         padding: 15px 22px;
         width: 238px;
+    }
+
+    .home-search-box.col.m4 {
+        width: 240px !important;
     }
 
     .search-box-form input {
@@ -85,5 +89,9 @@
     .home-search-box h1 {
         font-size: 15px !important;
         text-align: left;
+    }
+
+    .main-header-text{
+        font-size: 1.3rem;
     }
 }

@@ -85,6 +85,10 @@ a{
         width: 98%;
     } */
 
+    .activity .image{
+        padding-right: 0.7rem;
+    }
+
     .activities-wrapper{
         display: flex;
         gap: .5rem;

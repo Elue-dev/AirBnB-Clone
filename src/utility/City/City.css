@@ -137,6 +137,10 @@ a{
         width: 100%;
     } */
 
+    .city .image{
+        padding-right: 0.7rem;
+    }
+
     .city img{
         width: 370px;
         max-width: 100%;
