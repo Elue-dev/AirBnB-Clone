@@ -15,7 +15,6 @@ export default function Activities({ activities, header }) {
         <h3 className="main-header-text wrapper">{header}</h3>
         <div className='activities-container'>
             <div className="activities-wrapper">
-                {/* <SlickSlider elements={citiesList} /> */}
                 {activitiesList}
             </div>
         </div>

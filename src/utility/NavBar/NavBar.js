@@ -48,8 +48,8 @@ function NavBar() {
                             <li onClick={removeMedia}><Link to="/">$ USD</Link></li>
                             <li onClick={removeMedia}><Link to="/">Become a host</Link></li>
                             <li onClick={removeMedia}><Link to="/">Help</Link></li>
-                            <li onClick={SignModalHandler, SignMedia} className='login-signup'>Sign Up</li>
-                            <li onClick={LogModalHandler, LogMedia} className='login-signup'>Log In</li>
+                            <li onClick={SignModalHandler, SignMedia} className='login-signup'><a>Sign Up</a></li>
+                            <li onClick={LogModalHandler, LogMedia} className='login-signup'><a>Log In</a></li>
                             <i onClick={removeMedia} className="fas fa-times"></i>
                         </ul>
                         <i onClick={()=>setShowMenu(!showMenu)} className='hamburger fas fa-bars'></i>

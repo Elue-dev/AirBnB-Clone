@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import openModal from '../../actions/openModal'
 import Login from './Login'
+import { baseUrl } from '../../api'
+import axios from 'axios'
+import swal from 'sweetalert'
 import './Login.css'
 
 export default function SignUp() {
 
-     const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const [changeEmail, setChangeEmail] = useState('')
     const [changePassword, setChangePassword] = useState('')
 
@@ -29,11 +32,56 @@ export default function SignUp() {
         dispatch(openModal('open', <Login />))
     }
 
-    const submitLogin = e => {
+    const submitLogin = async (e) => {
         e.preventDefault()
-        console.log(changeEmail)
-        console.log(changePassword)
+        const url = `${baseUrl}/users/signup`
+        const data = {
+            email: changeEmail,
+            password: changePassword
+        }
+        // if(changeEmail === '' || changePassword === ''){
+        //     alert('Enter your details')
+        //     return
+        // }
+
+        const resp = await axios.post(url, data)
+        const token = resp.data.token
+        console.log(token)
+        console.log(resp.data)
+
+        // const url2 = `${baseUrl}/users/token-check`
+        // const resp2 = await axios.post(url2, {token})
+        // console.log(resp2.data)
+
+        // resp.data.msg could be:
+        // -invalidData
+        // -userExists
+        // -userAdded
+
+        if(resp.data.msg === 'userExists'){
+            swal({
+                title: "Email Exists",
+                text: "The email you provided is already registered. Please try another.",
+                icon: "error",
+              })
+        }
+
+        if(resp.data.msg === 'invalidData'){
+            swal({
+                title: "Invalid email/password",
+                text: "Please provide a valid email and password",
+                icon: "error",
+              })
+        }
+
+        if(resp.data.msg === 'userAdded'){
+            swal({
+                title: "success",
+                icon: "success",
+              })
+        }
     }
+
 
     return (
         <div className="login-form">
@@ -58,7 +106,7 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput}) => {
             <div className='col m12'>
                 <div className='input-field' id='email'>
                     <div className='form-label'>Email</div>
-                    <input type='text'  className='browser-default' placeholder='Email' onChange={changeEmailInput} style={{width: '90%'}} />
+                    <input type='email' className='browser-default' placeholder='Email' onChange={changeEmailInput} style={{width: '90%'}} />
                 </div>
             </div>
             <div className='col m12'>
@@ -68,7 +116,7 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput}) => {
                 </div>
             </div>
             <div className='col m12'>
-                <button type='submit' className='btn red accent-2' style={{width: '100%', fontWeight: '700'}}>Submit</button>
+                <button type='submit' className='btn red accent-2' style={{width: '100%', fontWeight: '700'}}>Sign Up</button>
             </div>
         </div>
     )
