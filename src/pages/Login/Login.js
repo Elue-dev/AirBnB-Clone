@@ -46,6 +46,7 @@ function Login(){
         if(resp.data.msg === 'noEmail'){
             swal({
                 title: "That email is not registered.",
+                text: "Go to Sign up and register an email...",
                 icon: "error",
               })
         }
@@ -53,7 +54,7 @@ function Login(){
         if(resp.data.msg === 'badPass'){
             swal({
                 title: "Invalid email/password",
-                text: "We don't have a match for that and password.",
+                text: "We don't have a match for that email and password.",
                 icon: "error",
               })
         }
@@ -63,7 +64,6 @@ function Login(){
                 title: "success",
                 icon: "success",
               })
-
             //   here is where we call our register action to update our auth reducer
             dispatch(regAction(resp.data)) //sending out everything we got from the server, not just the token
         }
