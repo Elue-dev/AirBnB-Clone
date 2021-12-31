@@ -67,3 +67,23 @@
         width: 280%;
     }
 }
+
+@media (max-width: 330px){
+    .home-search-box.col.m4 {
+        top: 35%;
+        left: 25%;
+        padding-bottom: 24px !important;
+        padding: 15px 22px;
+        width: 238px;
+    }
+
+    .search-box-form input {
+        padding: 1px;
+        font-size: 14px;
+    }
+
+    .home-search-box h1 {
+        font-size: 15px !important;
+        text-align: left;
+    }
+}

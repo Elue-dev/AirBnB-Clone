@@ -62,11 +62,11 @@ a{
 }
 
 @media (max-width: 500px){
-    .activities-wrapper{
+    /* .activities-wrapper{
         grid-template-columns: 1fr;
         gap: 1.3rem;
         width: 90%;
-    }
+    } */
 
     h3{
         font-size: 1.7rem;
@@ -81,8 +81,23 @@ a{
         width: 370px;
     }
 
-    .activity{
+    /* .activity{
         width: 98%;
+    } */
+
+    .activities-wrapper{
+        display: flex;
+        gap: .5rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .activities-wrapper::-webkit-scrollbar{
+        display: none;
+    }
+
+    .activity{
+        min-width: 85%;
     }
 }
 

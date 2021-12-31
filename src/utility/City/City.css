@@ -109,18 +109,33 @@ a{
 }
 
 @media (max-width: 500px){
-    .cities-wrapper{
+    /* .cities-wrapper{
         grid-template-columns: 1fr;
         gap: .3rem;
+    } */
+
+    .cities-wrapper{
+        display: flex;
+        gap: .5rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .cities-wrapper::-webkit-scrollbar{
+        display: none;
+    }
+
+    .city{
+        min-width: 85%;
     }
 
     h3{
         font-size: 1.7rem;
     }
 
-    .city{
+    /* .city{
         width: 100%;
-    }
+    } */
 
     .city img{
         width: 370px;
