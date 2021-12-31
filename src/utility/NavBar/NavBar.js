@@ -56,6 +56,7 @@ function NavBar() {
                     text: "You have successfully logged out",
                     icon: "success",
                 })
+                setShowMenu(false)
             }
         }
 
