@@ -61,7 +61,7 @@ a{
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 540px){
     /* .activities-wrapper{
         grid-template-columns: 1fr;
         gap: 1.3rem;

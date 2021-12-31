@@ -108,7 +108,7 @@ a{
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 540px){
     /* .cities-wrapper{
         grid-template-columns: 1fr;
         gap: .3rem;
