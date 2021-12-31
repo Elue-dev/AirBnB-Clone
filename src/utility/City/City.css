@@ -99,6 +99,10 @@ a{
         grid-template-columns: repeat(2,1fr);
     }
 
+    .city img {
+        width: 337px;
+    }
+
     img{
         width: 340px;
     }

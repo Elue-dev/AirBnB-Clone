@@ -3,7 +3,6 @@ import { useLocation, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import openModal from '../../actions/openModal'
 import '../NavBar/NavBar.css'
-import Login from '../../pages/Login/Login';
 import SignUp from '../../pages/Login/SignUp';
 
 function NavBar() {
@@ -43,7 +42,7 @@ function NavBar() {
                             <li onClick={removeMedia}><Link to="/">Help</Link></li>
                             <li onClick={modalHandler, media} className='login-signup'>Sign Up</li>
                             <li onClick={modalHandler, media} className='login-signup'>Log In</li>
-                            <i onClick={()=>setShowMenu(false)} className="fas fa-times"></i>
+                            <i onClick={removeMedia} className="fas fa-times"></i>
                         </ul>
                         <i onClick={()=>setShowMenu(!showMenu)} className='hamburger fas fa-bars'></i>
                     </div>  
