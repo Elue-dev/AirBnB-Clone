@@ -48,7 +48,7 @@ function NavBar() {
             dispatch(openModal('open', <Login />))
         }
 
-        const logOut = () => {
+        const logOutAction = () => {
             if(window.confirm('Are you aure you want to log out?')){
                 dispatch(logoutAction())
                 swal({
@@ -72,14 +72,14 @@ function NavBar() {
                             <li onClick={removeMedia}><Link to="/">Become a host</Link></li>
                             <li onClick={removeMedia}><Link to="/">Help</Link></li>
                             {auth.email
-                                ? <>
+                                ? (<>
                                     <li className='right-space'>Hello, {auth.email}</li>
-                                    <li onClick={logOut}>Logout</li>
-                                  </>
-                                : <>
+                                    <li onClick={logOutAction}>Logout</li>
+                                  </>)
+                                : (<>
                                     <li onClick={SignModalHandler, SignMedia} className='login-signup'><a>Sign Up</a></li>
                                     <li onClick={LogModalHandler, LogMedia} className='login-signup'><a>Log In</a></li>
-                                  </>
+                                  </>)
                             }
                             <i onClick={removeMedia} className="fas fa-times"></i>
                         </ul>

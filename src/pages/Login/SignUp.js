@@ -15,6 +15,18 @@ export default function SignUp() {
     const [changeEmail, setChangeEmail] = useState('')
     const [changePassword, setChangePassword] = useState('')
 
+    const handleVisibility = () => {
+        const eye = document.getElementById('eye')
+        const passwordInput = document.querySelector('.password')
+        if(passwordInput.type === 'password'){
+            passwordInput.setAttribute('type','text')
+            eye.className = 'fas fa-eye'
+        } else {
+            passwordInput.setAttribute('type', 'password')
+            eye.className = 'fas fa-eye-slash'
+        }
+    }
+
     const changeEmailInput = (e) => {
         setChangeEmail(e.target.value)
     }
@@ -24,7 +36,11 @@ export default function SignUp() {
     }
 
     const showInputs = () => {
-        setlowerPartOfForm(<SignUpInputFields changeEmailInput={changeEmailInput} changePasswordInput={changePasswordInput} />)
+        setlowerPartOfForm(<SignUpInputFields
+             changeEmailInput={changeEmailInput}
+             changePasswordInput={changePasswordInput}
+             handleVisibility={handleVisibility}
+            />)
     }
 
     const lowerFormState = <button type='button' onClick={showInputs} className="sign-up-button">Sign up with email</button>
@@ -41,10 +57,6 @@ export default function SignUp() {
             email: changeEmail,
             password: changePassword
         }
-        // if(changeEmail === '' || changePassword === ''){
-        //     alert('Enter your details')
-        //     return
-        // }
 
         const resp = await axios.post(url, data)
         const token = resp.data.token
@@ -81,6 +93,7 @@ export default function SignUp() {
                 title: "success",
                 icon: "success",
               })
+
             //   here is where we call our register action to update our auth reducer
             dispatch(regAction(resp.data)) //sending out everything we got from the server, not just the token
         }
@@ -105,7 +118,7 @@ export default function SignUp() {
     )
 }
 
-const SignUpInputFields = ({ changeEmailInput, changePasswordInput}) => {
+const SignUpInputFields = ({ changeEmailInput, changePasswordInput, handleVisibility}) => {
     return(
         <div>
             <div className='col m12'>
@@ -117,7 +130,7 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput}) => {
             <div className='col m12'>
                 <div className='input-field' id='email'>
                     <div className='form-label'>Password</div>
-                    <input type='password' className='browser-default' placeholder='Password' onChange={changePasswordInput} style={{width: '90%'}} />
+                    <div onClick={handleVisibility}><input type='password' className='browser-default password' placeholder='Password' onChange={changePasswordInput} style={{width: '90%'}} /><i id='eye' style={styles.eye} className="fas fa-eye-slash"></i></div>
                 </div>
             </div>
             <div className='col m12'>
@@ -125,4 +138,13 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput}) => {
             </div>
         </div>
     )
+}
+
+const styles = {
+    eye: {
+        right: '11px',
+        position: 'absolute',
+        bottom: '38px',
+        cursor: 'pointer',
+    }
 }

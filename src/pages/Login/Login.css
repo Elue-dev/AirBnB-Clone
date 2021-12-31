@@ -145,3 +145,10 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+#eye{
+    right: 323px;
+    position: absolute;
+    bottom: 259px;
+    cursor: pointer;
+}
