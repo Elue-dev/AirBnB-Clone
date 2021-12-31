@@ -17,7 +17,7 @@ function Login(){
     const submitLogin = e => {
         e.preventDefault()
         console.log(email)
-        console.log(passwordd)
+        console.log(password)
     }
 
         return(
