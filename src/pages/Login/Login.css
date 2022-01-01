@@ -146,9 +146,9 @@
     text-decoration: underline;
 }
 
-#eye{
-    right: 323px;
+#logeye{
     position: absolute;
-    bottom: 259px;
     cursor: pointer;
+    right: 11px;
+    bottom: 37px;
 }

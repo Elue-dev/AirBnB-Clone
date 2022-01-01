@@ -19,7 +19,7 @@ function Login(){
     }
 
     const handleVisibility = () => {
-        const eye = document.getElementById('eye')
+        const eye = document.getElementById('logeye')
         const passwordInput = document.querySelector('.password')
         if(passwordInput.type === 'password'){
             passwordInput.setAttribute('type','text')
@@ -43,10 +43,19 @@ function Login(){
         console.log(token)
         console.log(resp.data)
 
+        if(email === '' || password === ''){
+            swal({
+                title: "Please fill in your details",
+                text: "Email and passwrod cannot be blank",
+                icon: "error",
+              })
+              return
+        }
+
         if(resp.data.msg === 'noEmail'){
             swal({
                 title: "That email is not registered.",
-                text: "Go to Sign up and register an email...",
+                text: "Go to Sign Up and register an email...",
                 icon: "error",
               })
         }
@@ -78,8 +87,20 @@ function Login(){
                         <span>or</span>
                         <div className="or-divider"></div>
                     </div>
-                    <div onClick={handleVisibility}><input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} className="browser-default" placeholder="Email address" /><i id='eye' className="fas fa-eye-slash"></i></div>
-                    <input type="password" value={password} onChange={(e)=> setpassword(e.target.value)} className="browser-default password" placeholder="Password" />
+
+                    <div className='col m12'>
+                        <div className='input-field' id='email'>
+                            <div onClick={handleVisibility}><input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} className="browser-default" placeholder="Email address" /></div>
+                        </div>
+                    </div>
+
+                    <div className='col m12'>
+                        <div className='input-field' id='email'>
+                            <div><input type="password" value={password} onChange={(e)=> setpassword(e.target.value)} className="browser-default password" placeholder="Password" />
+                                <i onClick={handleVisibility} id='logeye' className="fas fa-eye-slash"></i>
+                            </div>
+                        </div>
+                    </div>
                     <button className="sign-up-button">Login</button>
                     <div className="divider"></div>
                     <div className='access'>Don't have an account? <span onClick={linkSignUp}>Sign up</span></div>

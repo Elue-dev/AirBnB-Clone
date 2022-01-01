@@ -7,6 +7,7 @@ import axios from 'axios'
 import swal from 'sweetalert'
 import regAction from '../../actions/regAction'
 import './Login.css'
+import './SingleInput.css'
 
 export default function SignUp() {
 
@@ -130,7 +131,9 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput, handleVisibi
             <div className='col m12'>
                 <div className='input-field' id='email'>
                     <div className='form-label'>Password</div>
-                    <div onClick={handleVisibility}><input type='password' className='browser-default password' placeholder='Password' onChange={changePasswordInput} style={{width: '90%'}} /><i id='eye' style={styles.eye} className="fas fa-eye-slash"></i></div>
+                    <div><input type='password' className='browser-default password' placeholder='Password' onChange={changePasswordInput} style={{width: '90%'}} />
+                        <i onClick={handleVisibility} id='eye' className="fas fa-eye-slash"></i>
+                    </div>
                 </div>
             </div>
             <div className='col m12'>
@@ -138,13 +141,4 @@ const SignUpInputFields = ({ changeEmailInput, changePasswordInput, handleVisibi
             </div>
         </div>
     )
-}
-
-const styles = {
-    eye: {
-        right: '11px',
-        position: 'absolute',
-        bottom: '38px',
-        cursor: 'pointer',
-    }
 }
