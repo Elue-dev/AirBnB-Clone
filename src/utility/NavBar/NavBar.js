@@ -52,7 +52,6 @@ function NavBar() {
             if(window.confirm('Are you sure you want to log out?')){
                 dispatch(logoutAction())
                 swal({
-                    title: "success",
                     text: "You have successfully logged out",
                     icon: "success",
                 })
