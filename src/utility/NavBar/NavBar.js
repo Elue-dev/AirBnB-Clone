@@ -49,7 +49,7 @@ function NavBar() {
         }
 
         const logOutAction = () => {
-            if(window.confirm('Are you aure you want to log out?')){
+            if(window.confirm('Are you sure you want to log out?')){
                 dispatch(logoutAction())
                 swal({
                     title: "success",
