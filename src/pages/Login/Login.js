@@ -70,7 +70,7 @@ function Login(){
 
         if(resp.data.msg === 'loggedIn'){
             swal({
-                title: "success",
+                title: "Login successful",
                 icon: "success",
               })
             //   here is where we call our register action to update our auth reducer
