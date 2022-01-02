@@ -76,10 +76,10 @@ class Home extends Component{
                 </div>
             </div>
             <div className="container-fluid">
-                        <Activities activities={this.state.activities} header="Today in your area" />
+                        <Venues venues={this.state.recVenues.venues} header={this.state.recVenues.header} />
                         <Cities cities={this.state.cities} header="Recommended Cities For You" />
                         <Cities cities={this.state.europeCities.cities} header={this.state.europeCities.header} />
-                        <Venues venues={this.state.recVenues.venues} header={this.state.recVenues.header} />
+                        <Activities activities={this.state.activities} header="Today in your area" />
                         <Cities cities={this.state.asiaCities.cities} header={this.state.asiaCities.header} />
                         <Cities cities={this.state.exoticCities.cities} header={this.state.exoticCities.header} />
                 </div>
