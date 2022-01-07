@@ -32,18 +32,12 @@ function NavBar() {
             setShowMenu(false)
         }
 
-        const SignModalHandler = () => {
-            dispatch(openModal('open', <SignUp />))
-        }
-        const LogModalHandler = () => {
-            dispatch(openModal('open', <Login />))
-        }
-
-        const SignMedia = () => {
+        const SignUpModalHandler = () => {
             setShowMenu(false)
             dispatch(openModal('open', <SignUp />))
         }
-        const LogMedia = () => {
+        
+        const LogInModalHandler = () => {
             setShowMenu(false)
             dispatch(openModal('open', <Login />))
         }
@@ -76,8 +70,8 @@ function NavBar() {
                                     <li onClick={logOutAction}>Logout</li>
                                   </>)
                                 : (<>
-                                    <li onClick={SignModalHandler, SignMedia} className='login-signup'><a>Sign Up</a></li>
-                                    <li onClick={LogModalHandler, LogMedia} className='login-signup'><a>Log In</a></li>
+                                    <li onClick={SignUpModalHandler} className='login-signup'><a>Sign Up</a></li>
+                                    <li onClick={LogInModalHandler} className='login-signup'><a>Log In</a></li>
                                   </>)
                             }
                             <i onClick={removeMedia} className="fas fa-times"></i>
