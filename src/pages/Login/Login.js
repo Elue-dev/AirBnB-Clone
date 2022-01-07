@@ -46,7 +46,7 @@ function Login(){
         if(email === '' || password === ''){
             swal({
                 title: "Please fill in your details",
-                text: "Email and passwrod cannot be blank",
+                text: "Email and password cannot be blank",
                 icon: "error",
               })
               return
