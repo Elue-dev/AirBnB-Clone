@@ -76,7 +76,6 @@ function NavBar() {
                             }
                             <i onClick={removeMedia} className="fas fa-times"></i>
                         </ul>
-                        <i onClick={()=>setShowMenu(!showMenu)} className='hamburger fas fa-bars'></i>
                     </div>  
                 </nav>
             </div>
