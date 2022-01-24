@@ -6,7 +6,7 @@ export default function City({ city }) {
     const { cityName, image, price, id } = city
 
     return (
-        <Link to={`/city/${id}`}>
+        <Link to={`/city/${cityName}`}>
             <div className='cities-wrapperr'>
                 <div className='image'>
                     <img src={image} alt={cityName} />

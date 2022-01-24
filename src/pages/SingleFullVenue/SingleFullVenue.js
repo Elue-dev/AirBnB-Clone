@@ -4,8 +4,16 @@ import { baseUrl } from '../../api'
 import './SingleFullVenue.css'
 import Spinner from '../../utility/Spinner/Spinner';
 import Point from './Point';
+import { useSelector, useDispatch } from 'react-redux';
+import openModal from '../../actions/openModal'
+import Login from '../Login/Login';
+import moment from 'moment'
+import swal from 'sweetalert';
 
 export default function SingleFullVenue() {
+
+    const auth = useSelector(state => state.auth)
+    const dispatch = useDispatch()
 
     const [singleVenue, setSingleVenue] = useState({})
     const [points, setPoints] = useState([])
@@ -51,6 +59,28 @@ export default function SingleFullVenue() {
 
     const reserveNow = () => {
         alert('Reserved')
+        const startDayMoment = moment(checkIn)
+        const endDayMoment = moment(checkOut)
+        const diffDays = endDayMoment.diff(startDayMoment, 'days')
+        if(diffDays < 1){
+            swal({
+                title: 'Check out date must be after check in date',
+                icon: 'error'
+            })
+        } else if(isNaN(diffDays)){
+            swal({
+                title: 'Please make sure your dates are valid',
+                icon: 'error'
+            })
+        } else{
+            const pricePerNight = singleVenue.pricePerNight
+            const totalPrice = pricePerNight * diffDays
+            
+        }
+    }
+
+    const LogInModalHandler = () => {
+        dispatch(openModal('open', <Login />))
     }
 
     if(singleVenue.title === undefined){
@@ -104,7 +134,11 @@ export default function SingleFullVenue() {
                     </div>
 
                     <div className='col s12 center'>
-                        <button onClick={reserveNow} className='btn red accent-2'>Reserve</button>
+                        {auth.token ?
+                          <button onClick={reserveNow} className='btn red accent-2'>Reserve</button>
+                           :
+                           <div>You must <span onClick={LogInModalHandler} className='login-signup'><a>Log In</a></span> to reserve</div> }
+                        
                     </div>
                 </div>
                 </div>

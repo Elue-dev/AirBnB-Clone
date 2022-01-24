@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom'
+import CityVenues from './pages/CityVenues/CityVenues'
 import Footer from './pages/Footer/Footer'
 import Home from './pages/Home/Home'
 import SingleFullVenue from './pages/SingleFullVenue/SingleFullVenue'
@@ -16,6 +17,7 @@ export default class App extends Component {
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/venue/:vId' element={<SingleFullVenue />} />
+            <Route exact path='/City/:cityName' element={<CityVenues />} />
             <Route exact path ='/' element={<Modal />} />
           </Routes>
           {/* <Footer /> */}
