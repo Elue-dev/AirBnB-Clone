@@ -33,8 +33,8 @@ code {
 }
 
 .text-link{
-  text-decoration-color: blue;
-  color: blue;
+  text-decoration-color: #ff5252;
+  color: #ff5252;
   cursor: pointer;
 }
 

@@ -70,6 +70,7 @@ nav ul li a:hover{
     cursor: pointer;
     position: absolute;
     right: 30px;
+    z-index: 10000;
 }
 
 .fa-times{
@@ -99,13 +100,14 @@ nav ul li a:hover{
 
 .overlay{
     position: fixed;
-    z-index: 100000000000; 
+    z-index: -1; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
     transition: .01s ease-out;
+    display: none;
 }
 
 .show{
@@ -139,7 +141,7 @@ nav ul li a:hover{
 
     .fa-bars{
         display: block;
-        z-index: 1000;
+        z-index: 10000000;
         color: #ff5252;
     }
 
@@ -147,6 +149,10 @@ nav ul li a:hover{
         display: block;
         z-index: 1000;
         color: #ff5252;
+    }
+
+    .overlay{
+        z-index: 100;
     }
 }
 

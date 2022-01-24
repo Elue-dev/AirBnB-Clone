@@ -136,7 +136,7 @@ export default function SingleFullVenue() {
                         {auth.token ?
                           <button onClick={reserveNow} className='btn red accent-2'>Reserve</button>
                            :
-                           <div>You must <span onClick={LogInModalHandler} className='login-signup text-link'><a>Log In</a></span> to reserve</div> }
+                           <div>You must <span onClick={LogInModalHandler} className='login-signup'><a className='text-link'>Log In</a></span> to reserve</div> }
                         
                     </div>
                 </div>
