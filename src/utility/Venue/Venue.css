@@ -81,6 +81,10 @@ a{
         max-height: 200px;
     }
 
+    .main-header-text{
+        padding-top: 4rem;
+    }
+
     .venue img{
         width: 370px;
     }

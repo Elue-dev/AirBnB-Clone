@@ -2,6 +2,11 @@
     text-align: left;
 }
 
+.text-link{
+    text-decoration: underline;
+    cursor: pointer !important;
+  }
+
 .single-venue .location{
     margin: 0px;
     word-wrap: break-word;

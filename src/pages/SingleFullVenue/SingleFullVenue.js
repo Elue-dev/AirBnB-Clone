@@ -58,7 +58,6 @@ export default function SingleFullVenue() {
     }
 
     const reserveNow = () => {
-        alert('Reserved')
         const startDayMoment = moment(checkIn)
         const endDayMoment = moment(checkOut)
         const diffDays = endDayMoment.diff(startDayMoment, 'days')
@@ -75,7 +74,7 @@ export default function SingleFullVenue() {
         } else{
             const pricePerNight = singleVenue.pricePerNight
             const totalPrice = pricePerNight * diffDays
-            
+            const scriptUrl = 'http://js.stripe.com/v3'
         }
     }
 
@@ -137,7 +136,7 @@ export default function SingleFullVenue() {
                         {auth.token ?
                           <button onClick={reserveNow} className='btn red accent-2'>Reserve</button>
                            :
-                           <div>You must <span onClick={LogInModalHandler} className='login-signup'><a>Log In</a></span> to reserve</div> }
+                           <div>You must <span onClick={LogInModalHandler} className='login-signup text-link'><a>Log In</a></span> to reserve</div> }
                         
                     </div>
                 </div>

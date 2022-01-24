@@ -58,7 +58,9 @@ function NavBar() {
                 <nav className={navColor}>
                     <div className='nav-wrapper margin'>
                         <Link to='/' className='left'><i className="fab fa-airbnb"></i><span>airbnb</span></Link>
-                        <div className={showMenu ? 'overlay show' : 'overlay'}></div>
+                        <div className={showMenu ? 'overlay show' : 'overlay'}>
+                            <i onClick={()=>setShowMenu(true)} className="fas fa-bars"></i>
+                        </div>
                         <ul id="nav-mobile" className={showMenu ? 'right media' : 'right'}>
                             <li onClick={removeMedia}><Link to="/">English (US)</Link></li>
                             <li onClick={removeMedia}><Link to="/">$ USD</Link></li>

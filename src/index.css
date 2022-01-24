@@ -32,6 +32,12 @@ code {
   color: #ff5252;
 }
 
+.text-link{
+  text-decoration-color: blue;
+  color: blue;
+  cursor: pointer;
+}
+
 @media (max-width: 500px){
   *{
     font-size: 1.1rem;
