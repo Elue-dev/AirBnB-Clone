@@ -9,6 +9,8 @@ import openModal from '../../actions/openModal'
 import Login from '../Login/Login';
 import moment from 'moment'
 import swal from 'sweetalert';
+import loadScript from '../../utilityFunctions/loadScript';
+import axios from 'axios';
 
 export default function SingleFullVenue() {
 
@@ -57,7 +59,7 @@ export default function SingleFullVenue() {
         setnumberOfGuests(e.target.value)
     }
 
-    const reserveNow = () => {
+    const reserveNow = async () => {
         const startDayMoment = moment(checkIn)
         const endDayMoment = moment(checkOut)
         const diffDays = endDayMoment.diff(startDayMoment, 'days')
@@ -75,6 +77,40 @@ export default function SingleFullVenue() {
             const pricePerNight = singleVenue.pricePerNight
             const totalPrice = pricePerNight * diffDays
             const scriptUrl = 'http://js.stripe.com/v3'
+            const stripePublicKey = 'pk_test_5198HtPL5CfCPYJ3X8TTrO06ChWxotTw6Sm2el4WkYdrfN5Rh7vEuVguXyPrTezvm3ntblRX8TpjAHeMQfHkEpTA600waD2fMrT';
+            //Moving the below code to it's own module
+            // await new Promise((resolve, reject)=> {
+            //     const script = document.createElement('script')
+            //     script.type = 'text/javascript'
+            //     script.src = scriptUrl
+            //     script.onload = () => {
+            //         console.log('the script has loaded');
+            //         resolve()
+            //     }
+            //     document.getElementsByTagName('head')[0].appendChild(script)
+            //     console.log('the script has been added to the head');
+            // })
+            await loadScript(scriptUrl) 
+            // console.log('lets run some stripe');
+            const stripe = window.Stripe(stripePublicKey)
+            const stripeSessionUrl = `${baseUrl}/payment/create-session`
+            const data = {
+                venueData: singleVenue,
+                totalPrice,
+                diffDays,
+                pricePerNight,
+                checkIn,
+                checkOut,
+                token: auth.token,
+                currency: 'USD'
+            }
+            const sessionVar = await axios.post(stripeSessionUrl, data)
+            // console.log(sessionVar.data);
+            stripe.redirectToCheckout({
+                sessionId: sessionVar.data.id
+            }).then((result) => {
+                console.log(result);
+            })
         }
     }
 

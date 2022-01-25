@@ -6,6 +6,8 @@ import logoutAction from '../../actions/logoutAction'
 import SignUp from '../../pages/Login/SignUp';
 import Login from '../../pages/Login/Login';
 import swal from 'sweetalert'
+import { HiOutlineMenuAlt3 } from 'react-icons/hi'
+import { AiOutlineClose } from 'react-icons/ai'
 import '../NavBar/NavBar.css'
 
 function NavBar() {
@@ -59,7 +61,8 @@ function NavBar() {
                     <div className='nav-wrapper margin'>
                         <Link to='/' className='left'><i className="fab fa-airbnb"></i><span>airbnb</span></Link>
                         <div className={showMenu ? 'overlay show' : 'overlay'}></div>
-                        <i onClick={()=>setShowMenu(true)} className="fas fa-bars"></i>
+                        {/* <i onClick={()=>setShowMenu(true)} className="fas fa-bars"></i> */}
+                        <HiOutlineMenuAlt3 onClick={()=>setShowMenu(true)} className='fa-bars'/>
                         <ul id="nav-mobile" className={showMenu ? 'right media' : 'right'}>
                             <li onClick={removeMedia}><Link to="/">English (US)</Link></li>
                             <li onClick={removeMedia}><Link to="/">$ USD</Link></li>
@@ -75,7 +78,8 @@ function NavBar() {
                                     <li onClick={LogInModalHandler} className='login-signup'><a>Log In</a></li>
                                   </>)
                             }
-                            <i onClick={removeMedia} className="fas fa-times"></i>
+                            {/* <i onClick={removeMedia} className="fas fa-times"></i> */}
+                            <AiOutlineClose onClick={removeMedia} className="fa-times" />
                         </ul>
                     </div>  
                 </nav>
