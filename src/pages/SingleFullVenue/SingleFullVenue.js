@@ -60,6 +60,7 @@ export default function SingleFullVenue() {
     }
 
     const reserveNow = async () => {
+            alert('Processing...')
         const startDayMoment = moment(checkIn)
         const endDayMoment = moment(checkOut)
         const diffDays = endDayMoment.diff(startDayMoment, 'days')
